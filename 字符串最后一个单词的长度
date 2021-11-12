@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+  char str[5000]={0};
+  char*str_p=str;
+  int count=0;
+  fgets(str,sizeof(str),stdin);     //指定流读取数据，每次读取一行，存在str指向的字符串里 fgets(char*str,int n,stream)
+  int str_len=strlen(str)-1;        //减去换行符 
+  if(str_len<=0)                    //防止没有输入
+  {
+    printf("0/n");
+    return 0;
+  }
+  str_p=str_p+str_len-1;            //为什么还要减一
+  for(int i=0;i<str_len;i++)       //为什么还要
+  {
+    if(*str_p!=' ')
+      count++;
+    else
+      break;
+    str_p--;
+   }
+  
+  
