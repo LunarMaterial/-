@@ -1,0 +1,25 @@
+描述： 连续输入字符串，按长度为8拆分，用0补齐
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+  string s;
+  getline(cin,s);
+  while(true)
+  {
+    int n=s.size();
+    if(n<=8)
+    {
+      s.insert(s.end(),8-n,'0');   //若不够8位，用0补齐
+      cout<<s<<endl;
+      if(!getline(cin,s))       //重要！，没有输入时break
+        break;
+    }
+    else
+    {
+      cout<<s.substr(0,8)<<endl;  //当长度超过八，则截取前八位
+      s=s.substr(8,n-8);          //新的s接续，继续循环
+    }
+  }
+}
