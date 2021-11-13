@@ -1,0 +1,23 @@
+哈希表hash map
+stl的map容器
+value-key 存储与查找
+消耗较大内存，但存储和查找消耗的时间大大降低：时间换空间
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+  char target;
+  unordered_map<char,int>mp;
+  char c;
+  while((c=getchar())!='\n'){   //按字符输入字符串
+    if(c>='A'&&c<='Z')          //若大写则转为小写
+      c=c-'A'+'a';
+    mp[c]++;                    //在哈希表里记录次数
+  }
+  cin>>target;  
+  if(target>='A'&&target<='Z')  //若是大写转小写
+      target=target-'A'+'a';
+  cout<<mp[target]<<endl;
+  return 0;
+}
