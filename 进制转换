@@ -1,0 +1,13 @@
+描述：输入一个十六进制的数值字符串,输出该数值的十进制字符串
+
+
+#include<bits/stdc++.h>
+using namespace std
+int main()
+{
+  int a;
+  while(cin>>hex>>a)
+  {
+    cout<<a<<endl;    //16进制输入
+  }
+}
