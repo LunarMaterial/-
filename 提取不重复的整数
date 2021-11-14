@@ -1,0 +1,25 @@
+输入一个 int 型整数，按照从右向左的阅读顺序，返回一个不含重复数字的新的整数。
+输入：9876673
+输出：37689
+
+unordered_set是基于哈希表,无重复元素
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+  int nums;
+  cin>>nums;
+  string str=to_string(nums); //转化为字符串型
+  unordered_set<char> set; 
+  reverse(str.begin(),str.end());   //逆序
+  string res;
+  for(char c:str)
+    if(set.count(c)!=1) //一开始set里为空，若没有c则赋给res，同时插进表中
+    {
+      res+=c;
+      set.insert(c);  //插入c后set.count(c)==1，再遇到便不会操作
+    }
+    cout<<stoi(res)<<endl;
+    return 0;
+}
