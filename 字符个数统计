@@ -1,0 +1,26 @@
+描述：计算字符串中含有的不同字符的个数，多个相同的字符只计算一次
+输入：abc
+输出：3
+输入：aaa
+输出：1
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+  string str;
+  getline(cin,str);
+  set<char> s;
+  for(char i:str)     //使用char遍历str
+  {
+    if(i>=0&&i<=127)    //字符在 ASCII 码范围内[ 0,127 ]
+    {
+      if(s.find(i)==s.end())    //在s中找不到相同的元素，则插入
+      {
+        s.insert(i);
+      }
+    }
+  }
+  cout<<s.size();
+  return 0;
+}
