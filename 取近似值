@@ -1,0 +1,18 @@
+描述： 接受一个正浮点数值，输出该数值的近似整数值，>0.5向上取整，<0.5向下取整。
+cin与scanf的不同：
+
+1.cin是标准化输入，包含在头文件<iostream>中。
+  scanf是格式化输入，包含在头文件<stdio.h>中。
+
+2.cin先把要输入的东西存入缓冲区，再输入，导致的输入操作效率稍低，但书写简便。
+  scanf的是用指针把要输入的东西输入的，输入效率比较高，但是写代码麻烦。
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+  double num;
+  scanf("%lf",&num);  //输入长浮点型
+  printf("%d",(int)(num+0.5));  //输出+0.5直接取整
+  return 0;
+}
