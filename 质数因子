@@ -1,0 +1,26 @@
+描述 :输入一个正整数，按照从小到大的顺序输出它的所有质因子（重复的也要列举)
+输入：180
+输出：2 2 3 3 5
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+  long input    // 注意是长整型
+  while(cin>>input)
+  {
+    for(int i=2;i<=sqrt(input);i++)     //质因子不会大于sqrt(input)，=很重要
+    {
+      while(input%i==0)               //当input能被整除时
+      {
+        input/=i;                   //input变为商
+        cout<<i<<' ';               //输出该质因子
+      }
+    }
+    if(input!=1)                  //防止i不够 例如170 i<=13  而质因数为2 5 17，17取不到
+    { 
+      cout<<inpit<<' ';
+    }
+  }
+  return 0;
+}
