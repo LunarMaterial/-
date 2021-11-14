@@ -1,0 +1,41 @@
+相同的记录进行合并，即将相同索引的数值求和运算，输出按照key值升序进行输出
+输入：
+4
+0 1
+0 2
+1 2
+3 4
+
+输出：
+0 3
+1 2
+3 4
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+  int n;
+  cin>>n;
+  map<int,int> m;     //建表
+  map<int,int>::iterator it;  //建迭代器
+  for(int i=0;i<n;i++)
+  {
+    int a,b;
+    cin>>a>>b;
+    it=m.find(a);     //遍历找a
+    if(it!=m.end())   //如果找到
+    {
+      m[a]=it->second+b;  //求和后赋值
+    }
+    else
+    {
+      m[a]=b;     //找不到直接赋值
+    }
+  }
+  for(it=m.begin();it!=m.end();it++)    //遍历输出
+  {
+    cout<<it->first<<" "<<it->second<<endl;
+  }
+  return 0;
+}
