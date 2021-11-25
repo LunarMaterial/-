@@ -1,0 +1,12 @@
+输入一个整数，将这个整数以字符串的形式逆序输出
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int nums;
+    cin>>nums;
+    string str=to_string(nums);
+    reverse(str.begin(),str.end());
+    cout<<str;
+}
