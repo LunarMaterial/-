@@ -1,0 +1,13 @@
+将一个英文语句以单词为单位逆序排放。例如“I am a boy”，逆序排放后为“boy a am I”	
+所有单词之间用一个空格隔开
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+  vector<string> vs;	//string类型的容器
+  string tmp;
+  while(cin>>tmp)			//每输入tmp 时就压入容器
+  	vs.push_back(tmp);
+  copy(vs.rbegin(),vs.rend(),ostream_iterator<string>(cout," "));	//copy反转流输出
+}
