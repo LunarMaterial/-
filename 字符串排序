@@ -1,0 +1,21 @@
+给定 n 个字符串，请对 n 个字符串按照字典序排列。
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+  int n;
+  cin>>n;
+  string s;
+  multiset<string> str;   //multiset：能时刻保证序列中的数是有序的，而且序列中可以存在重复的数
+  while(cin>>s)
+  {
+      str.emplace(s);   //push_back() 向容器尾部添加元素时，先元素，再将这个元素拷贝或者移动到容器中
+  }                   // 而emplace_back()在实现时，则是直接在容器尾部创建这个元素
+  for(auto s:str)     //遍历输出
+  {
+      cout<<s<<endl;  
+  }
+  return 0;
+}
