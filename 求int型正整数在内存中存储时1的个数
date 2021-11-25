@@ -1,0 +1,18 @@
+输入一个 int 型的正整数，计算出该 int 型数据在内存中存储时 1 的个数。
+
+转换为2进制有多少个1
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int m=0;
+	int n;
+	cin>>n;
+	while(n)
+	{
+		m+=n%2;
+		n/=2;
+	}
+	cout<<m;
+}
+
