@@ -4,9 +4,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
-    int nums;
+    int nums;       
     cin>>nums;
-    string str=to_string(nums);
-    reverse(str.begin(),str.end());
+    string str=to_string(nums);             //转成字符串
+    reverse(str.begin(),str.end());         //你转字符串
     cout<<str;
 }
