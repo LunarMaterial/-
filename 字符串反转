@@ -1,0 +1,9 @@
+#include<bits/stdc+.h>
+using namespace std;
+int main()
+{
+  string str;       与反转数字相同
+  cin>>str;
+  reverse(str.begin(), str.end());
+  cout<<str;
+}
